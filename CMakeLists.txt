@@ -4,7 +4,7 @@
 
 cmake_minimum_required(VERSION 2.8)
 
-project (cpp_posix)
+project (cpp_nix)
 set( ${CMAKE_PROJECT_NAME}_VERSION_MAJOR 0 )
 set( ${CMAKE_PROJECT_NAME}_VERSION_MINOR 1 )
 set( ${CMAKE_PROJECT_NAME}_VERSION_BUGFIX 0 )
@@ -13,9 +13,15 @@ set( ${CMAKE_PROJECT_NAME}_VERSION_BUGFIX 0 )
 # search path
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
-include_directories(include)
+enable_testing()
+
+set(GTEST_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/gtest)
+add_subdirectory(gtest)
+
+include_directories(include BEFORE SYSTEM)
 add_subdirectory(include)
 add_subdirectory(src)
 add_subdirectory(test)
+
 
 include("TargetDoc" OPTIONAL)

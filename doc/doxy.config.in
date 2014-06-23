@@ -1,7 +1,7 @@
 DOXYFILE_ENCODING      = UTF-8
 PROJECT_NAME           = "${PROJECT_NAME}"
 PROJECT_NUMBER         = ${${PROJECT_NAME}_VERSION_MAJOR}.${${PROJECT_NAME}_VERSION_MINOR}.${${PROJECT_NAME}_VERSION_BUGFIX}
-PROJECT_BRIEF          = "C++ wrappers for common posix APIs"
+PROJECT_BRIEF          = "C++ wrappers for common linux APIs"
 PROJECT_LOGO           =
 OUTPUT_DIRECTORY       = doc
 CREATE_SUBDIRS         = NO
