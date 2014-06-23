@@ -6,6 +6,14 @@ set(LIBS
   gtest_main
   pthread)
 
+add_executable( clock_test clock_test.cc )
+target_link_libraries( clock_test ${LIBS} )
+add_test( clock_test clock_test )
+
+add_executable( epoll_test epoll_test.cc )
+target_link_libraries( epoll_test ${LIBS} )
+add_test( epoll_test epoll_test )
+
 add_executable( notify_pipe_test notify_pipe_test.cc )
 target_link_libraries( notify_pipe_test ${LIBS} )
 add_test( notify_pipe_test notify_pipe_test )

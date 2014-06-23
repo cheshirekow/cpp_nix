@@ -23,6 +23,9 @@
  *  @brief
  */
 
+#ifndef CPP_NIX_CLOCK_H_
+#define CPP_NIX_CLOCK_H_
+
 #include <ctime>
 #include "timespec.h"
 
@@ -37,20 +40,20 @@ class Clock {
   timespec GetRes() {
     timespec output;
     int result = clock_getres(m_clock_id, &output);
-    if (result) {
+    if (!result) {
       return output;
     } else {
       return timespec { result, 0 };
     }
   }
 
-  timespec GetTime(){
+  timespec GetTime() {
     timespec output;
-    int result = clock_gettime(m_clock_id,&output);
-    if( result ){
+    int result = clock_gettime(m_clock_id, &output);
+    if (!result) {
       return output;
     } else {
-      return timespec{result,0};
+      return timespec { result, 0 };
     }
   }
 
@@ -62,4 +65,6 @@ class Clock {
   clockid_t  m_clock_id;
 };
 
-}
+}  // namespace nix
+
+#endif  // CPP_NIX_CLOCK_H_
