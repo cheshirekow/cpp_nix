@@ -15,6 +15,7 @@ set_target_properties(
 install(TARGETS 
   cpp_nix_static 
   cpp_nix_shared
+  EXPORT CPP_NIX_TARGETS
   RUNTIME DESTINATION bin
   LIBRARY DESTINATION lib
   ARCHIVE DESTINATION lib)
